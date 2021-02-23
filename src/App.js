@@ -1,14 +1,13 @@
-import {MainNav, Footer} from "./components/ui";
+import {Route, Switch} from 'react-router-dom'
+import {Home, ASICIPSearch, AllASICIPs} from "./pages";
 
 function App() {
   return (
-      <>
-          <MainNav/>
-          <div className="p-24">
-              <h1 className="text-4xl">Welcome to ASIC IP Finder</h1>
-          </div>
-          <Footer/>
-      </>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/asicip" component={AllASICIPs}/>
+        <Route exact path="/search" component={ASICIPSearch}/>
+      </Switch>
   );
 }
 
